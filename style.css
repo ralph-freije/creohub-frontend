@@ -261,9 +261,7 @@ footer {
   transform: scale(0.98);
 }
 
-/* ===================== */
-/*   MOBILE MENU BASE    */
-/* ===================== */
+
 
 .icons {
   display: flex;
@@ -278,7 +276,6 @@ footer {
   cursor: pointer;
 }
 
-/* All positioning lives here always — not inside the media query */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -301,10 +298,6 @@ footer {
   display: none;
 }
 
-/* ===================== */
-/*       MOBILE          */
-/* ===================== */
-
 @media (max-width: 768px) {
 
   nav {
@@ -316,12 +309,12 @@ footer {
   }
 
   .mobile-menu {
-    display: none; /* stays hidden until .active is added */
+    display: none;
   }
 
   .mobile-menu.active {
-    display: flex; /* show it */
-    right: 0;      /* slide in */
+    display: flex; 
+    right: 0;    
   }
 
   .mobile-menu a {
