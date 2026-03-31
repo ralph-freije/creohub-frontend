@@ -133,13 +133,13 @@ footer {
 }
 
 .about-text p {
-  color: #cfd8dc; /* softer white */
+  color: #cfd8dc;
   line-height: 1.6;
 }
 .about-image img {
   width: 100%;
   max-width: 450px;
-  border-radius: 20px; /* 🔥 rounded corners */
+  border-radius: 20px;
   display: block;
 }
 .about-image {
@@ -167,7 +167,7 @@ footer {
 
 .feature {
   flex: 1;
-  background: rgba(255,255,255,0.1); /* glass effect */
+  background: rgba(255,255,255,0.1);
   padding: 25px;
   border-radius: 12px;
   transition: 0.3s;
