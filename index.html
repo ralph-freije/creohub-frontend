@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +12,11 @@
 
   <header>
     <div class="container">
-      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="logo">
+        </a>
+      </div>
 
       <nav>
         <ul>
@@ -25,9 +30,21 @@
       <div class="icons">
         <span>🔍</span>
         <span>🛒</span>
+        <div class="menu-toggle">☰</div>
       </div>
     </div>
   </header>
+
+  <!-- ✅ MOBILE MENU OUTSIDE -->
+  <div class="mobile-menu">
+    <span class="close-menu">✖</span>
+
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Categories</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="mobile-overlay"></div>
 
 
   <section class="banner">
@@ -37,6 +54,7 @@
       <button class="btn">Shop Now</button>
     </div>
   </section>
+
   <section class="about">
     <div class="container about-content">
       <div class="about-text">
@@ -46,10 +64,10 @@
           Our mission is to make your shopping experience easy and enjoyable.
         </p>
       </div>
-      <div class="about-image">
-      </div>
+      <div class="about-image"></div>
     </div>
   </section>
+
   <section class="features">
     <div class="container">
 
@@ -76,27 +94,50 @@
 
     </div>
   </section>
-<section class="contact">
-  <div class="contact-overlay">
-    <div class="container contact-content">
-      <div class="contact-left">
-        <h2>Contact Us</h2>
-        <p>We’d love to hear from you. Send us a message and we’ll get back to you as soon as possible.</p>
-      </div>
 
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+  <section class="contact">
+    <div class="contact-overlay">
+      <div class="container contact-content">
+        <div class="contact-left">
+          <h2>Contact Us</h2>
+          <p>We’d love to hear from you. Send us a message and we’ll get back to you as soon as possible.</p>
+        </div>
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Your Email">
+          <textarea placeholder="Your Message"></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
   <footer>
     <p>© 2026 copyright. All rights reserved.</p>
   </footer>
 
-</body>
+  <script>
+   const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".mobile-menu");
+const closeBtn = document.querySelector(".close-menu");
+const overlay = document.querySelector(".mobile-overlay");
 
+toggle.addEventListener("click", () => {
+  menu.classList.add("active");
+  overlay.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+overlay.addEventListener("click", () => {
+  menu.classList.remove("active");
+  overlay.classList.remove("active");
+});
+  </script>
+
+</body>
 </html>
