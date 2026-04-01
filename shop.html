@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="icons">
+                <span>🔍</span>
+                <a href="cart.html" class="cart-btn">🛒</a>
+                <div class="menu-toggle">☰</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <span class="close-menu">✖</span>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="#">Categories</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="mobile-overlay"></div>
+
+    <section class="shop-layout">
+        <div class="container">
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#" data-filter="all" class="active">All</a></li>
+                    <li><a href="#" data-filter="electronics">Electronics</a></li>
+                    <li><a href="#" data-filter="clothing">Clothing</a></li>
+                    <li><a href="#" data-filter="accessories">Accessories</a></li>
+                </ul>
+            </aside>
+
+            <div class="products-grid">
+                <div class="product-card" data-category="electronics">
+                    <img src="images/product1.png" alt="product">
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">$49</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="electronics">
+                    <img src="images/product2.png" alt="product">
+                    <h3>Smart Watch</h3>
+                    <p class="price">$199</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card" data-category="accessories">
+                    <img src="images/product3.png" alt="product">
+                    <h3>Gaming Mouse</h3>
+                    <p class="price">$29</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 copyright. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".mobile-menu");
+        const closeBtn = document.querySelector(".close-menu");
+        const overlay = document.querySelector(".mobile-overlay");
+
+        toggle.addEventListener("click", () => {
+            menu.classList.add("active");
+            overlay.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            menu.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+
+        overlay.addEventListener("click", () => {
+            menu.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+
+        const filters = document.querySelectorAll(".sidebar a");
+        const products = document.querySelectorAll(".product-card");
+
+        filters.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                filters.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+
+                const filter = link.getAttribute("data-filter");
+
+                products.forEach(product => {
+                    const category = product.getAttribute("data-category");
+
+                    if (filter === "all" || filter === category) {
+                        product.style.display = "block";
+                    } else {
+                        product.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
