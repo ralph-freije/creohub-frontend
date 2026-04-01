@@ -443,6 +443,29 @@ footer {
 .search-input:focus {
   width: 220px;
 }
+.shop-search {
+  background: #f5f6f8;
+  padding: 20px 0;
+}
+
+.shop-search .container {
+  display: flex;
+  justify-content: center;
+}
+.shop-search .search-input {
+  width: 400px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.shop-search .search-input:focus {
+  width: 450px;
+}
 @media (max-width: 768px) {
 
   nav {
@@ -571,6 +594,12 @@ footer {
     gap: 25px;
     padding: 0 15px;
   }
+.shop-search .search-input {
+  width: 90%;
+}
 
+.shop-search .search-input:focus {
+  width: 95%;
+}
 }
 
