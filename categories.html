@@ -202,17 +202,20 @@
     });
   </script>
   <script>
-    const currentPage = window.location.pathname.split("/").pop();
+const links = document.querySelectorAll("nav ul li a");
 
-    const links = document.querySelectorAll("nav ul li a");
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  const currentPath = window.location.pathname;
 
-    links.forEach(link => {
-      const linkPage = link.getAttribute("href");
-
-      if (linkPage === currentPage) {
-        link.classList.add("active");
-      }
-    });
+  if (
+    currentPath.endsWith(linkPage) ||
+    currentPath.endsWith(linkPage.replace(".html", "")) ||
+    (currentPath === "/" && linkPage === "index.html")
+  ) {
+    link.classList.add("active");
+  }
+});
   </script>
 </body>
 
