@@ -37,8 +37,7 @@
       </div>
     </div>
   </header>
-
-  <div class="mobile-menu">
+ <div class="mobile-menu">
     <span class="close-menu">✖</span>
 
     <a href="index.html">Home</a>
@@ -47,73 +46,29 @@
     <a href="contact.html">Contact</a>
   </div>
   <div class="mobile-overlay"></div>
+<section class="page-hero">
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you</p>
+</section>
 
+<section class="contact-page">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p>Have questions? Send us a message.</p>
 
-  <section class="banner">
-    <div class="banner-content">
-      <h1>Welcome to the store</h1>
-      <p>Discover the best products at unbeatable prices</p>
-      <button class="btn">Shop Now</button>
+      <p><strong>Email:</strong> support@store.com</p>
+      <p><strong>Phone:</strong> +961 03 123 456</p>
     </div>
-  </section>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button class="btn">Send Message</button>
+    </form>
 
-  <section class="about">
-    <div class="container about-content">
-      <div class="about-text">
-        <h2>Why choose us</h2>
-        <p>
-          We provide high quality products with the best prices.
-          Our mission is to make your shopping experience easy and enjoyable.
-        </p>
-      </div>
-      <div class="about-image"></div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="container">
-
-      <h2>Our Features</h2>
-
-      <div class="features-grid">
-
-        <div class="feature">
-          <h3>Fast Delivery</h3>
-          <p>Get your products quickly and safely.</p>
-        </div>
-
-        <div class="feature">
-          <h3>Best Prices</h3>
-          <p>Affordable prices for everyone.</p>
-        </div>
-
-        <div class="feature">
-          <h3>Quality Products</h3>
-          <p>We guarantee top quality items.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="contact">
-    <div class="contact-overlay">
-      <div class="container contact-content">
-        <div class="contact-left">
-          <h2>Contact Us</h2>
-          <p>We’d love to hear from you. Send us a message and we’ll get back to you as soon as possible.</p>
-        </div>
-
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name">
-          <input type="email" placeholder="Your Email">
-          <textarea placeholder="Your Message"></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <footer class="footer">
     <div class="container footer-grid">
@@ -176,8 +131,7 @@
 
     <p class="footer-bottom">© 2026 copyright. All rights reserved.</p>
   </footer>
-
-  <script>
+ <script>
     const toggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".mobile-menu");
     const closeBtn = document.querySelector(".close-menu");
@@ -198,19 +152,6 @@
       overlay.classList.remove("active");
     });
   </script>
-  <script>
-    const currentPage = window.location.pathname.split("/").pop();
 
-    const links = document.querySelectorAll("nav ul li a");
-
-    links.forEach(link => {
-      const linkPage = link.getAttribute("href");
-
-      if (linkPage === currentPage) {
-        link.classList.add("active");
-      }
-    });
-  </script>
 </body>
-
 </html>

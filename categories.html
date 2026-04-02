@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="icons">
+                <a href="cart.html" class="cart-btn">🛒</a>
+                <div class="menu-toggle">☰</div>
+            </div>
+        </div>
+    </header>
+ <div class="mobile-menu">
+    <span class="close-menu">✖</span>
+
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="categories.html">Categories</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="mobile-overlay"></div>
+
+    <section class="page-hero">
+        <h1>Categories</h1>
+        <p>Explore our product collections</p>
+    </section>
+
+    <section class="categories">
+        <div class="categories-grid">
+
+            <div class="category-card electronics" data-category="electronics">
+                <img src="images/product1.png">
+                <div class="overlay">
+                    <h3>Electronics</h3>
+                    <p>Smart devices & gadgets</p>
+                </div>
+            </div>
+
+            <div class="category-card clothing" data-category="clothing">
+                <img src="images/product2.png">
+                <div class="overlay">
+                    <h3>Clothing</h3>
+                    <p>Latest fashion</p>
+                </div>
+            </div>
+
+            <div class="category-card accessories" data-category="accessories">
+                <img src="images/product3.png">
+                <div class="overlay">
+                    <h3>Accessories</h3>
+                    <p>Complete your look</p>
+                </div>
+            </div>
+
+            <div class="category-card gaming" data-category="gaming">
+                <img src="images/gaming.jpg">
+                <div class="overlay">
+                    <h3>Gaming</h3>
+                    <p>Gear & consoles</p>
+                </div>
+            </div>
+
+            <div class="category-card fitness" data-category="fitness">
+                <img src="images/fitness.jpg">
+                <div class="overlay">
+                    <h3>Fitness</h3>
+                    <p>Stay healthy</p>
+                </div>
+            </div>
+
+            <div class="category-card home" data-category="home">
+                <img src="images/home.jpg">
+                <div class="overlay">
+                    <h3>Home</h3>
+                    <p>Comfort & style</p>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <h3>Main Menu</h3>
+                <ul class="footer-menu">
+                    <li>
+                        <a href="shop.html">Shop -</a>
+                        <span>Browse all products</span>
+                    </li>
+
+                    <li>
+                        <a href="#">Pages -</a>
+                        <span>Quick navigation</span>
+                    </li>
+
+                    <li>
+                        <a href="#">Blogs -</a>
+                        <span>Latest articles</span>
+                    </li>
+
+                    <li>
+                        <a href="#">About -</a>
+                        <span>Who we are</span>
+                    </li>
+
+                    <li>
+                        <a href="#">Sale -</a>
+                        <span>Best deals</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>About Store</h3>
+                <p>
+                    Share store details, promotions, or brand content with your customers.
+                </p>
+            </div>
+
+            <div>
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers and updates</p>
+
+                <div class="newsletter">
+                    <input type="email" placeholder="your@email.com">
+                    <button>Subscribe</button>
+                </div>
+
+                <div class="socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="footer-bottom">© 2026 copyright. All rights reserved.</p>
+    </footer>
+    <script>
+        const cards = document.querySelectorAll(".category-card");
+
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                const category = card.getAttribute("data-category");
+                window.location.href = `shop.html?category=${category}`;
+            });
+        });
+    </script>
+     <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".mobile-menu");
+    const closeBtn = document.querySelector(".close-menu");
+    const overlay = document.querySelector(".mobile-overlay");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.add("active");
+      overlay.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+
+    overlay.addEventListener("click", () => {
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  </script>
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+
+    const links = document.querySelectorAll("nav ul li a");
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+
+</html>

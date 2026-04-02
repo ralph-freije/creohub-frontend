@@ -24,8 +24,8 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html" class="active">Shop</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
@@ -36,13 +36,15 @@
         </div>
     </header>
 
-    <div class="mobile-menu">
-        <span class="close-menu">✖</span>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="#">Categories</a>
-        <a href="#">Contact</a>
-    </div>
+ <div class="mobile-menu">
+    <span class="close-menu">✖</span>
+
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="categories.html">Categories</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="mobile-overlay"></div>
 
     <div class="mobile-overlay"></div>
     <section class="shop-search">
@@ -59,6 +61,9 @@
                     <li><a href="#" data-filter="electronics">Electronics</a></li>
                     <li><a href="#" data-filter="clothing">Clothing</a></li>
                     <li><a href="#" data-filter="accessories">Accessories</a></li>
+                    <li><a href="#" data-filter="gaming">Gaming</a></li>
+                    <li><a href="#" data-filter="fitness">Fitness</a></li>
+                    <li><a href="#" data-filter="home">Home</a></li>
                 </ul>
             </aside>
 
@@ -87,68 +92,68 @@
         </div>
     </section>
 
-    
-  <footer class="footer">
-    <div class="container footer-grid">
 
-      <div>
-        <h3>Main Menu</h3>
-        <ul class="footer-menu">
-          <li>
-            <a href="shop.html">Shop -</a>
-            <span>Browse all products</span>
-          </li>
+    <footer class="footer">
+        <div class="container footer-grid">
 
-          <li>
-            <a href="#">Pages -</a>
-            <span>Quick navigation</span>
-          </li>
+            <div>
+                <h3>Main Menu</h3>
+                <ul class="footer-menu">
+                    <li>
+                        <a href="shop.html">Shop -</a>
+                        <span>Browse all products</span>
+                    </li>
 
-          <li>
-            <a href="#">Blogs -</a>
-            <span>Latest articles</span>
-          </li>
+                    <li>
+                        <a href="#">Pages -</a>
+                        <span>Quick navigation</span>
+                    </li>
 
-          <li>
-            <a href="#">About -</a>
-            <span>Who we are</span>
-          </li>
+                    <li>
+                        <a href="#">Blogs -</a>
+                        <span>Latest articles</span>
+                    </li>
 
-          <li>
-            <a href="#">Sale -</a>
-            <span>Best deals</span>
-          </li>
-        </ul>
-      </div>
+                    <li>
+                        <a href="#">About -</a>
+                        <span>Who we are</span>
+                    </li>
 
-      <div>
-        <h3>About Store</h3>
-        <p>
-          Share store details, promotions, or brand content with your customers.
-        </p>
-      </div>
+                    <li>
+                        <a href="#">Sale -</a>
+                        <span>Best deals</span>
+                    </li>
+                </ul>
+            </div>
 
-      <div>
-        <h3>Newsletter</h3>
-        <p>Subscribe to get special offers and updates</p>
+            <div>
+                <h3>About Store</h3>
+                <p>
+                    Share store details, promotions, or brand content with your customers.
+                </p>
+            </div>
 
-        <div class="newsletter">
-          <input type="email" placeholder="your@email.com">
-          <button>Subscribe</button>
+            <div>
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers and updates</p>
+
+                <div class="newsletter">
+                    <input type="email" placeholder="your@email.com">
+                    <button>Subscribe</button>
+                </div>
+
+                <div class="socials">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
         </div>
 
-        <div class="socials">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-
-    </div>
-
-    <p class="footer-bottom">© 2026 copyright. All rights reserved.</p>
-  </footer>
+        <p class="footer-bottom">© 2026 copyright. All rights reserved.</p>
+    </footer>
 
 
 
@@ -225,7 +230,33 @@
                 link.classList.add("active");
             }
         });
+        const params = new URLSearchParams(window.location.search);
+        const selectedCategory = params.get("category");
+
+        if (selectedCategory) {
+            products.forEach(product => {
+                const category = product.getAttribute("data-category");
+
+                if (category !== selectedCategory) {
+                    product.style.display = "none";
+                }
+            });
+        }
+
+
+        if (selectedCategory) {
+
+            filters.forEach(link => {
+                const filter = link.getAttribute("data-filter");
+                link.classList.remove("active");
+                if (filter === selectedCategory) {
+                    link.classList.add("active");
+                }
+            });
+
+        }
     </script>
+
 </body>
 
 </html>

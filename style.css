@@ -534,7 +534,7 @@ nav ul li a.active {
   font-size: 20px;
   margin-bottom: 25px;
   position: relative;
-    text-shadow: 0 0 10px rgba(243, 156, 18, 0.2);
+  text-shadow: 0 0 10px rgba(243, 156, 18, 0.2);
 }
 
 .footer h3::after {
@@ -568,6 +568,7 @@ nav ul li a.active {
   border-radius: 50%;
   display: inline-block;
 }
+
 .footer ul li a {
   color: #cfd8dc;
   text-decoration: none;
@@ -616,9 +617,11 @@ nav ul li a.active {
 .newsletter button:hover {
   background: linear-gradient(45deg, #e67e22, #ffa726);
 }
+
 .newsletter input::placeholder {
   color: #888;
 }
+
 .socials {
   margin-top: 20px;
   display: flex;
@@ -631,8 +634,8 @@ nav ul li a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-    background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   color: white;
   font-size: 16px;
@@ -642,7 +645,7 @@ nav ul li a.active {
 .socials a:hover {
   background: #f39c12;
   transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(243,156,18,0.3);
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
 
 }
 
@@ -654,6 +657,7 @@ nav ul li a.active {
   font-size: 14px;
   color: #90a4ae;
 }
+
 .footer-menu {
   list-style: none;
   padding: 0;
@@ -685,6 +689,146 @@ nav ul li a.active {
 .footer-menu li span {
   font-size: 14px;
   color: #9fb3c8;
+}
+.page-hero {
+  background: #1f2a35;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.page-hero h1 {
+  font-size: 36px;
+}
+
+.page-hero p {
+  color: #bbb;
+}
+
+.categories {
+  padding: 40px 20px 40px 20px;
+  background: linear-gradient(135deg, #f5f6f8, #eaecef);
+}
+.categories-grid {
+  display: grid;
+  width:100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+.category-card {
+  position: relative;
+  border-radius: 20px;
+  width:100%;
+  overflow: hidden;
+  cursor: pointer;
+  height: 260px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.4s;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: 0.3s;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  z-index: 2;
+}
+
+.overlay h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+.category-card.electronics::after {
+  background: linear-gradient(to top, rgba(0,123,255,0.7), transparent);
+}
+
+.category-card.clothing::after {
+  background: linear-gradient(to top, rgba(255,0,120,0.6), transparent);
+}
+
+.category-card.accessories::after {
+  background: linear-gradient(to top, rgba(138,43,226,0.6), transparent);
+}
+
+.category-card.gaming::after {
+  background: linear-gradient(to top, rgba(0,200,100,0.6), transparent);
+}
+
+.category-card.fitness::after {
+  background: linear-gradient(to top, rgba(255,140,0,0.6), transparent);
+}
+
+.category-card.home::after {
+  background: linear-gradient(to top, rgba(0,150,136,0.6), transparent);
+}
+.contact-page {
+  padding: 80px 0;
+  background: #f5f6f8;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contact-info h2 {
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #f39c12;
 }
 @media (max-width: 768px) {
   .footer-grid {
@@ -862,5 +1006,8 @@ nav ul li a.active {
   .newsletter button {
     width: 100%;
     border-radius: 5px;
+  }
+    .categories-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
