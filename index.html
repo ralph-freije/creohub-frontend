@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Store</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -112,31 +115,102 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2026 copyright. All rights reserved.</p>
+  <footer class="footer">
+    <div class="container footer-grid">
+
+      <div>
+        <h3>Main Menu</h3>
+        <ul class="footer-menu">
+          <li>
+            <a href="shop.html">Shop -</a>
+            <span>Browse all products</span>
+          </li>
+
+          <li>
+            <a href="#">Pages -</a>
+            <span>Quick navigation</span>
+          </li>
+
+          <li>
+            <a href="#">Blogs -</a>
+            <span>Latest articles</span>
+          </li>
+
+          <li>
+            <a href="#">About -</a>
+            <span>Who we are</span>
+          </li>
+
+          <li>
+            <a href="#">Sale -</a>
+            <span>Best deals</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>About Store</h3>
+        <p>
+          Share store details, promotions, or brand content with your customers.
+        </p>
+      </div>
+
+      <div>
+        <h3>Newsletter</h3>
+        <p>Subscribe to get special offers and updates</p>
+
+        <div class="newsletter">
+          <input type="email" placeholder="your@email.com">
+          <button>Subscribe</button>
+        </div>
+
+        <div class="socials">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="footer-bottom">© 2026 copyright. All rights reserved.</p>
   </footer>
 
   <script>
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".mobile-menu");
-const closeBtn = document.querySelector(".close-menu");
-const overlay = document.querySelector(".mobile-overlay");
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".mobile-menu");
+    const closeBtn = document.querySelector(".close-menu");
+    const overlay = document.querySelector(".mobile-overlay");
 
-toggle.addEventListener("click", () => {
-  menu.classList.add("active");
-  overlay.classList.add("active");
-});
+    toggle.addEventListener("click", () => {
+      menu.classList.add("active");
+      overlay.classList.add("active");
+    });
 
-closeBtn.addEventListener("click", () => {
-  menu.classList.remove("active");
-  overlay.classList.remove("active");
-});
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
 
-overlay.addEventListener("click", () => {
-  menu.classList.remove("active");
-  overlay.classList.remove("active");
-});
+    overlay.addEventListener("click", () => {
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    });
   </script>
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
 
+    const links = document.querySelectorAll("nav ul li a");
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 </body>
+
 </html>
